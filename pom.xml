@@ -32,6 +32,7 @@
     </properties>
 
     <modules>
+        <module>interop-library-kotlin</module>
     </modules>
 
 </project>
