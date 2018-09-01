@@ -34,6 +34,7 @@
     <modules>
         <module>interop-library-kotlin</module>
         <module>interop-consumer-kotlin</module>
+        <module>interop-consumer-java</module>
     </modules>
 
 </project>
