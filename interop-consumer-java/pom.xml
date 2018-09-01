@@ -22,19 +22,12 @@
 
     <dependencies>
 
-        <!-- Lang (must be removed) -->
-        <dependency>
-            <groupId>org.jetbrains.kotlin</groupId>
-            <artifactId>kotlin-stdlib-jdk8</artifactId>
-            <version>${kotlin.version}</version>
-            <scope>runtime</scope>
-        </dependency>
-
         <!-- Project -->
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>interop-library-kotlin</artifactId>
             <version>${project.version}</version>
+            <classifier>target-java</classifier>
         </dependency>
 
         <!-- Test -->

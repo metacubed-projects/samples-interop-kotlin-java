@@ -89,6 +89,32 @@
                     </dependency>
                 </dependencies>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <minimizeJar>true</minimizeJar>
+                            <shadedArtifactAttached>true</shadedArtifactAttached>
+                            <shadedClassifierName>target-java</shadedClassifierName>
+                            <shadedGroupFilter>org.jetbrains.kotlin</shadedGroupFilter>
+                            <relocations>
+                                <!-- The relocated package cannot be directly used from Java,
+                                     since 'private' is a language keyword -->
+                                <relocation>
+                                    <pattern>kotlin</pattern>
+                                    <shadedPattern>private.kotlin</shadedPattern>
+                                </relocation>
+                            </relocations>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
